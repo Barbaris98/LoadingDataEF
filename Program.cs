@@ -35,7 +35,6 @@ namespace LoadingData
                     Console.WriteLine($"{user.Name} - {user.Company?.Name}");
                 */
 
-
                 var users = db.Users.ToList();  // метод Include не используется
                 //                      Потому что мы уже добавили все объекты в контекст при их создании
                 foreach (var user in users)
