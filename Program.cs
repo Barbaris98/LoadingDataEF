@@ -26,10 +26,18 @@ namespace LoadingData
 
                 db.SaveChanges();
 
+                /*
                 // получаем пользователей
                 var users = db.Users
                     .Include(u => u.Company)  // подгружаем данные по компаниям
                     .ToList();
+                foreach (var user in users)
+                    Console.WriteLine($"{user.Name} - {user.Company?.Name}");
+                */
+
+
+                var users = db.Users.ToList();  // метод Include не используется
+                //                      Потому что мы уже добавили все объекты в контекст при их создании
                 foreach (var user in users)
                     Console.WriteLine($"{user.Name} - {user.Company?.Name}");
 
